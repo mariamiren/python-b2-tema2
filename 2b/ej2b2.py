@@ -42,20 +42,32 @@ Salida esperada:
 import pandas as pd
 import typing as t
 from pathlib import Path
+from ej2b2 import read_jason_basic, read_json_with_orientation, read_json_and_normalize
 
+t_dir = Path(_file_). parent
+JSON_PATH = current_dir / "data/ej2b2/ramen-ratings-json"
+S_JSON_PATH = current_dir / "data/ej2b2/ramen-ratings-table.json"
+IZE_JSON_PATH = current_dir / "data/ej2b2/ramen-ratings-nested.json"
 
-def read_json_basic(file_path: str) -> pd.DataFrame:
-    # Write here your code
-    pass
+def read_json_basic():
+    df = read_json_basic(BASIC_JSON_PATH)
+    assert isinstance(df, pd.DataFrame), "The returned object is not a pandas DataFrame"
+    assert not df.empty, "The DataFrame is empty"
 
+def read_json_with_orientation():
+    df = read_json_orientation(RECORDS_JSON_PATH, orient="records")
+    assert isistance(df, pd.DataFrame), "The returned
+    assert not df.empty, "The DataFrame is empty"
 
-def read_json_with_orientation(file_path: str, orient: str) -> pd.DataFrame:
-    # Write here your code
-    pass
+def read_json_with_orientation():
+    df = read_json_orientation(TABLE_JSON_PATH, orient="table")
+    assert isistance(df, pd.DataFrame), "The returned
+    assert not df.empty, "The DataFrame is empty"
 
-def read_json_and_normalize(file_path: str, record_path: t.List[str]) -> pd.DataFrame:
-    # Write here your code
-    pass
+def read_json_and_normalize():
+    df = read_json_normalize(NORMALIZE_JSON_PATH, orient="data")
+    assert isistance(df, pd.DataFrame), "The returned
+    assert not df.empty, "The DataFrame is empty"
 
 # Para probar el código, descomenta las siguientes líneas
 # current_dir = Path(__file__).parent
