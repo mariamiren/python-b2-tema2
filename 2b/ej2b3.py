@@ -42,7 +42,6 @@ def read_sqlite_table():
     assert isinstance(df, pd.DataFrame)
     assert not df.empty
 
-
 def execute_sqlite_query():
     query = "SELECT * FROM ramen_ratings WHERE Stars >=4"
     df = execute_sqlite_query(TEST_DB_PATH, query)
